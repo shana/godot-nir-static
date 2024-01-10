@@ -164,11 +164,11 @@ if unknown:
 
 print("Building for architecture " + env["arch"] + " on platform " + env["platform"])
 
-env.Append(CPPDEFINES=env.get("cppdefines", ""))
-env.Append(CCFLAGS=env.get("ccflags", ""))
-env.Append(CXXFLAGS=env.get("cxxflags", ""))
-env.Append(CFLAGS=env.get("cflags", ""))
-env.Append(LINKFLAGS=env.get("linkflags", ""))
+env.Append(CPPDEFINES=env.get("cppdefines", "").split())
+env.Append(CCFLAGS=env.get("ccflags", "").split())
+env.Append(CXXFLAGS=env.get("cxxflags", "").split())
+env.Append(CFLAGS=env.get("cflags", "").split())
+env.Append(LINKFLAGS=env.get("linkflags", "").split())
 
 # Require C++17
 if env.get("is_msvc", False):
